@@ -7,19 +7,19 @@ import socket
 import subprocess
 import sys
 import time
-from queue import queue
+from Queue import Queue
 from datetime import datetime
 
 # Clear the screen
 subprocess.call('clear', shell=True)
 
-# Enter Host to scan
+# Enter target host and port range
 remoteServer    = raw_input("Enter a remote host to scan: ")
 remoteServerIP  = socket.gethostbyname(remoteServer)
 startPort = int(raw_input("Enter the start port to scan: "))
 endPort = int(raw_input("Enter the end port to scan: "))
 
-# Print a nice banner with information on which host we are about to scan
+# Print a banner with information on which host is being scanned
 print "-" * 60
 print "Please wait, scanning remote host...", remoteServerIP
 localtime = time.asctime(time.localtime())
