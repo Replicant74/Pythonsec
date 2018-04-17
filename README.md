@@ -6,3 +6,8 @@ Changes made:
 - Minor changes to text strings describing what the script is doing.
 - Changed to allow you to specify start port and end port.
 - Changed to display a list of ports which are closed.
+- Tidied up the layout and display times.
+
+Things to be added:
+- Scanning multiple hosts.
+- Threading.
