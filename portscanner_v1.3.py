@@ -2,10 +2,12 @@
 #!/usr/bin/env python
 
 # modules
+import threading
 import socket
 import subprocess
 import sys
 import time
+from queue import queue
 from datetime import datetime
 
 # Clear the screen
