@@ -33,7 +33,7 @@ try:
         if result == 0:
             print "Port {}: 	 Open".format(port)
         elif result != 0:
-            print "Port {}: Closed or is firewalled".format(port)
+            print "Port {}: Closed".format(port)
         sock.close()
 
 except KeyboardInterrupt:
