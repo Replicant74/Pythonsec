@@ -2,11 +2,7 @@
 #!/usr/bin/env python
 
 # modules
-import threading
-import socket
-import subprocess
-import sys
-import time
+import threading, socket, subprocess, sys, time
 from Queue import Queue
 from datetime import datetime
 
@@ -19,11 +15,11 @@ startPort = int(raw_input("Enter the start port to scan: "))
 endPort = int(raw_input("Enter the end port to scan: "))
 
 # Banner displaying which host is being scanned
-print "-" * 60
-print "Please wait, scanning remote host...", remoteServerIP
+print ("-" * 60)
+print ("Please wait, scanning remote host...", remoteServerIP)
 localtime = time.asctime(time.localtime())
-print "Scan started at: ", localtime
-print "-" * 60
+print ("Scan started at: ", localtime)
+print ("-" * 60)
 
 # Check what time the scan started
 t1 = datetime.now()
@@ -36,18 +32,16 @@ try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         result = sock.connect_ex((remoteServerIP, port))
         if result == 0:
-            print "Port {}: [+] Open".format(port)
+            print ("Port {}: [+] Open".format(port))
         elif result != 0:
-            print "Port {}: [-] Closed".format(port)
+            print ("Port {}: [-] Closed".format(port))
         sock.close()
 
 except KeyboardInterrupt:
-    print "You pressed Ctrl+C"
-    sys.exit()
+    sys.exit("You pressed Ctrl+C")
 
 except socket.gaierror:
-    print 'Hostname could not be resolved. Exiting'
-    sys.exit()
+    sys.exit("Hostname could not be resolved. Exiting")
 
 except socket.error:
     sys.exit("Couldn't connect to server")
@@ -57,7 +51,7 @@ t2 = datetime.now()
 
 # Calculates the difference in time, to see how long it took to run the script
 total =  t2 - t1
-print "-" * 60
+print ("-" * 60)
 
 # Display scan time taken
-print 'Scanning Completed in: ', total
+print ("Scanning Completed in: ", total)
