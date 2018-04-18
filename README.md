@@ -1,14 +1,16 @@
 # Pythonsec
 Learning Python as applicable for use in security testing.
-Original script I worked on was found here http://www.pythonforbeginners.com/code-snippets-source-code/port-scanner-in-python
+The original script I worked upon (and hopefully improved) was found here http://www.pythonforbeginners.com/code-snippets-source-code/port-scanner-in-python
+
 The changes found here are based on helpful comments from the above page and also my own changes to the original script.
 
-There are also a bunch of scripts found elsewhere for studying and modifying in order to see which method works best and in which situation.
+There are also a bunch of scripts discovered elsewhere on the web for studying and modifying in order to see which method works best and in which situation. During my investigation into this, I found that there are several methods which can be used for port scanning
 
 Things to be done:
 - Scanning multiple hosts.
 - Threading.
-- Investigate which is better - 
+- Investigate which method for scanning is better in a given scenario.
+- Ensure the script works on Python 3.6.5
 
 remoteServer    = raw_input("Enter a remote host to scan: ")
 remoteServerIP  = socket.gethostbyname(remoteServer)
@@ -19,8 +21,7 @@ endPort = int(raw_input("Enter the end port to scan: "))
 
 import threading
 from queue import Queue
-import time
-import socket
+import time, socket
 
 # a print_lock is what is used to prevent "double" modification of shared variables.
 # this is used so while one thread is using a variable, others cannot access
@@ -253,3 +254,6 @@ NOTES from commenters:
 --------------------------------------------------
 Consider setting a timeout instead of a for loop by using socket.setdefaulttimeout(timeout).
 socket.setdefaulttimeout(0.5) This will make the program faster!
+-----------
+***This is intended to be a learning resource for securing networks so please be responsible***
+***It's also very much a work in progress.
