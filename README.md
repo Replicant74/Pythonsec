@@ -12,21 +12,22 @@ Things to be done:
 - Investigate which method for scanning is better in a given scenario.
 - Ensure the script works on Python 3.6.5
 
+#Prompts the user to input the remote host ip address and then prompts for the first port to be scanned and the last port. All ports in between these two values will be scanned.
+
 remoteServer    = raw_input("Enter a remote host to scan: ")
 remoteServerIP  = socket.gethostbyname(remoteServer)
 startPort = int(raw_input("Enter the start port to scan: "))
 endPort = int(raw_input("Enter the end port to scan: "))
 
-**** OR ****
 
 import threading
 from queue import Queue
 import time, socket
 
-# a print_lock is what is used to prevent "double" modification of shared variables.
-# this is used so while one thread is using a variable, others cannot access
-# it. Once done, the thread releases the print_lock.
-# to use it, you want to specify a print_lock per thing you wish to print_lock.
+#a print_lock is what is used to prevent "double" modification of shared variables.
+#this is used so while one thread is using a variable, others cannot access
+#it. Once done, the thread releases the print_lock.
+#to use it, you want to specify a print_lock per thing you wish to print_lock.
 print_lock = threading.Lock()
 
 target = 'hackthissite.org'
@@ -43,7 +44,7 @@ def portscan(port):
         pass
 
 
-# The threader thread pulls an worker from the queue and processes it
+#The threader thread pulls an worker from the queue and processes it
 def threader():
     while True:
         # gets an worker from the queue
@@ -56,10 +57,10 @@ def threader():
         q.task_done()
 
 
-# Create the queue and threader 
+#Create the queue and threader 
 q = Queue()
 
-# how many threads are we going to allow for
+#how many threads are we going to allow for
 for x in range(30):
      t = threading.Thread(target=threader)
 
@@ -72,15 +73,15 @@ for x in range(30):
 
 start = time.time()
 
-# 100 jobs assigned.
+#100 jobs assigned.
 for worker in range(1,100):
     q.put(worker)
 
-# wait until the thread terminates.
+#wait until the thread terminates.
 q.join()
 
 -----------------------
-# Another imperfect example from https://stackoverflow.com/questions/26174743/making-a-fast-port-scanner
+#Another example from https://stackoverflow.com/questions/26174743/making-a-fast-port-scanner
 import socket
 ip = "External IP"
 s = socket.socket(2, 1) #socket.AF_INET, socket.SOCK_STREAM
@@ -101,7 +102,7 @@ for port in range(0, 10000):
         break
 raw_input()
 ---------------------
-# This script runs on Python 3
+#This script runs on Python 3
 import socket, threading
 
 
@@ -178,7 +179,7 @@ for x in range(1,100):
     r += 1     
     t.start() 
 --------------------------------------------------
-# From http://www.coderholic.com/python-port-scanner/
+#From http://www.coderholic.com/python-port-scanner/
 #!/usr/bin/env python
 from socket import * 
 
@@ -205,12 +206,11 @@ if __name__ == '__main__':
 import socket
 import os
 
-# This is used to set a default timeout on socket
-# objects.
+#This is used to set a default timeout on socket
+#objects.
 DEFAULT_TIMEOUT = 0.5
 
-# This is used for checking if a call to socket.connect_ex
-# was successful.
+#This is used for checking if a call to socket.connect_ex was successful.
 SUCCESS = 0
 
 def check_port(*host_port, timeout=DEFAULT_TIMEOUT):
