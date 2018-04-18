@@ -3,7 +3,7 @@
 
 # modules
 import threading, socket, subprocess, sys, time
-from Queue import Queue
+from queue import queue
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
@@ -23,8 +23,6 @@ print ("-" * 60)
 
 # Check what time the scan started
 t1 = datetime.now()
-
-# Using the range function to specify ports (here it will scan all ports between 1 and 1024)
 
 # Error handling
 try:
