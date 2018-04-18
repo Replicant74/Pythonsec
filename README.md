@@ -12,6 +12,8 @@ Things to be done:
 - Investigate which method for scanning is better in a given scenario.
 - Ensure the script works on Python 3.6.5
 
+----------------------------------------------------------
+# Scan method 1.
 #Prompts the user to input the remote host ip address and then prompts for the first port to be scanned and the last port. All ports in between these two values will be scanned.
 
 remoteServer    = raw_input("Enter a remote host to scan: ")
@@ -19,6 +21,11 @@ remoteServerIP  = socket.gethostbyname(remoteServer)
 startPort = int(raw_input("Enter the start port to scan: "))
 endPort = int(raw_input("Enter the end port to scan: "))
 
+    Usage: 
+    $ Enter a remote host to scan: 127.0.0.1
+    $ Enter the start port to scan: 1
+    $ Enter the end port to scan: 25
+-----------------------------------------------------------
 
 import threading
 from queue import Queue
