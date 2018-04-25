@@ -3,16 +3,16 @@
 
 # modules
 import threading, socket, subprocess, sys, time
-from Queue import queue
+from queue import Queue
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
 
 # Enter target host and port range
-remoteServer    = raw_input("Enter a remote host to scan: ")
+remoteServer    = input("Enter a remote host to scan: ")
 remoteServerIP  = socket.gethostbyname(remoteServer)
-startPort = int(raw_input("Enter the start port to scan: "))
-endPort = int(raw_input("Enter the end port to scan: "))
+startPort = int(input("Enter the start port to scan: "))
+endPort = int(input("Enter the end port to scan: "))
 
 # Banner displaying which host is being scanned
 print ("-" * 60)
