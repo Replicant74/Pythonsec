@@ -3,7 +3,7 @@
 
 # modules
 import threading, socket, subprocess, sys, time
-from queue import queue
+from Queue import queue
 from datetime import datetime
 
 subprocess.call('clear', shell=True)
