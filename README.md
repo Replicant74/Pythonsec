@@ -1,4 +1,33 @@
 # Pythonsec
+MacOS
+Python interpreter
+$ python --version #Checks version. Default is 2.7 (To ensure you are using v3, type $ alias python='python3'
+$ python #opens the interpreter
+
+    Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 03:03:55) 
+    [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> 
+
+    >>>help() # Shows interactive help
+    
+    Welcome to Python 3.6's help utility!
+
+    If this is your first time using Python, you should definitely check out
+    the tutorial on the Internet at https://docs.python.org/3.6/tutorial/.
+
+    Enter the name of any module, keyword, or topic to get help on writing
+    Python programs and using Python modules.  To quit this help utility and
+    return to the interpreter, just type "quit".
+
+    To get a list of available modules, keywords, symbols, or topics, type
+    "modules", "keywords", "symbols", or "topics".  Each module also comes
+    with a one-line summary of what it does; to list the modules whose name
+    or summary contain a given string such as "spam", type "modules spam".
+
+    help> modules # Displays a list of available modules.
+
+---------------------------------------------------------
 Learning Python as applicable for use in security testing.
 The original script I worked upon (and hopefully improved) was found here http://www.pythonforbeginners.com/code-snippets-source-code/port-scanner-in-python
 
