@@ -61,8 +61,7 @@ from queue import Queue
 import time, socket
 
 #a print_lock is what is used to prevent "double" modification of shared variables.
-#this is used so while one thread is using a variable, others cannot access
-#it. Once done, the thread releases the print_lock.
+#this is used so while one thread is using a variable, others cannot access it. Once done, the thread releases the print_lock.
 #to use it, you want to specify a print_lock per thing you wish to print_lock.
 print_lock = threading.Lock()
 
@@ -136,7 +135,7 @@ for port in range(0, 10000):
     else:
         print("Port opened on %d" % port)
         break
-raw_input()
+input()
 ---------------------
 #This script runs on Python 3
 import socket, threading
