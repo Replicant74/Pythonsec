@@ -10,6 +10,8 @@ import time
 import scapy
 from queue import Queue
 from datetime import datetime
+from logging import getLogger, ERROR
+getLogger("scapy.runtime") .setLevel (ERROR)
 from scapy.all import *
 
 subprocess.call('clear', shell=True)
