@@ -10,6 +10,7 @@ import time
 import scapy
 from queue import Queue
 from datetime import datetime
+from scapy.all import *
 
 subprocess.call('clear', shell=True)
 
