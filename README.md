@@ -39,7 +39,7 @@ Things to be done:
 - Scanning multiple hosts.
 - Threading.
 - Investigate which method for scanning is better in a given scenario.
-- Ensure the script works on Python 3.6.5
+- Check script SYN/ACK/RST response using wireshark.
 
 ----------------------------------------------------------
 # Scan method 1.
