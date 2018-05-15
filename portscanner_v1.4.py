@@ -2,7 +2,12 @@
 #!/usr/bin/env python
 
 # modules
-import threading, socket, subprocess, sys, time
+import threading
+import socket
+import subprocess
+import sys
+import time
+import scapy
 from queue import Queue
 from datetime import datetime
 
