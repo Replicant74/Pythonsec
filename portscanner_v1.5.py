@@ -8,6 +8,8 @@ import subprocess
 import sys
 import time
 import scapy
+
+from threading import Thread, Lock
 from queue import Queue
 from datetime import datetime
 from logging import getLogger, ERROR
